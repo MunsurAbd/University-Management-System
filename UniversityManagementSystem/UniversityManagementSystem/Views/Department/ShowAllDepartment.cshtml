@@ -1,0 +1,37 @@
+﻿
+@using UniversityManagementSystem.Models
+@model List<UniversityManagementSystem.Models.Department>
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>ShowAllDepartment</title>
+</head>
+<body>
+    <div>
+        <table class="table table-bordered">
+            <tr>
+                <td>ID</td>
+                <td>Code</td>
+                <td>Name</td>
+            </tr>
+          
+                @foreach (Department data in Model)
+                {
+                    <tr>
+                        <td>@data.Id</td>
+                        <td>@data.Code</td>
+                        <td>@data.Name</td>
+                    </tr>
+                }
+           
+        </table>
+    </div>
+</body>
+</html>
