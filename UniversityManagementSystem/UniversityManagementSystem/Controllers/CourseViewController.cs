@@ -12,22 +12,6 @@ namespace UniversityManagementSystem.Controllers
         CourseManager courseManager = new CourseManager();
         //
         // GET: /CourseView/
-        public ActionResult ShowCourseStatics()
-        {
-            IEnumerable<Department> departments = departmentManager.GetAll();
-            ViewBag.Departments = departments;
-            IEnumerable<CourseViewModel> courseViewModels = courseManager.GetCourseViewModels;
-            return View(courseViewModels);
-        }
-
-        public JsonResult GetCourseInformationByDepartmentId(int departmentId)
-        {
-            IEnumerable<CourseViewModel> courseViewModels = courseManager.GetCourseViewModels.ToList().FindAll(deptId => deptId.DepartmentId == departmentId);
-            return Json(courseViewModels, JsonRequestBehavior.AllowGet);
-
-
-        }
-
 
     }
 }
